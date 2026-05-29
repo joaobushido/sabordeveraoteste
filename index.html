@@ -1,452 +1,449 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabor e Verão | Sorvete, Picolé e Açaí</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luigi Sorvetes – Sabores que encantam!</title>
+  <meta name="description" content="Luigi Sorvetes – Sorvetes artesanais em BH. Linha Família, Picolés de Fruta e Linha Zero. Aberto todos os dias das 09h às 21h." />
 
-    <style>
-        /* ================= Váriaveis de Cor ================= */
-        :root {
-            --primary-orange: #f26218; /* Laranja da logo */
-            --orange-hover: #d95512;
-            --acai-purple: #4a1942; /* Roxo escuro para contraste e CTAs */
-            --purple-hover: #361130;
-            --chocolate: #5c3a21;
-            --bg-light: #fef8f5;
-            --white: #ffffff;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --transition: all 0.3s ease;
-        }
+  <!-- Google Fonts: Quicksand (display) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-        /* ================= Reset e Base ================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* ================= Animações (Scroll Reveal) ================= */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ================= Navbar ================= */
-        header.navbar {
-            background-color: var(--primary-orange);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo-nav {
-            color: var(--white);
-            font-size: 24px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--acai-purple);
-        }
-
-        /* ================= Hero Section ================= */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff8c42 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            color: var(--white);
-            margin-top: 60px; /* offset navbar */
-        }
-
-        .hero-logo-box {
-            width: 250px;
-            margin-bottom: 30px;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        .btn-cta {
-            background-color: var(--acai-purple);
-            color: var(--white);
-            padding: 18px 40px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 50px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-cta:hover {
-            background-color: var(--purple-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
-        }
-
-        /* ================= Nosso Ambiente ================= */
-        .ambiente-section {
-            padding: 100px 5%;
-            background-color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .ambiente-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .section-title {
-            color: var(--primary-orange);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .ambiente-text p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .ambiente-image {
-            flex: 1;
-            min-width: 300px;
-            height: 400px;
-            background-color: #eee;
-            border-radius: 20px;
-            background-image: url('https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        /* ================= Destaques do Cardápio ================= */
-        .cardapio-section {
-            padding: 100px 5%;
-            background-color: var(--bg-light);
-            text-align: center;
-        }
-
-        .grid-cardapio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(242, 98, 24, 0.2);
-        }
-
-        .card-img {
-            height: 250px;
-            background-color: #ddd;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Placeholders estilosos do Unsplash */
-        .img-acai { background-image: url('https://images.unsplash.com/photo-1626200419109-38686e0821d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'); }
-        .img-sorvete { background-image: url('https://images.unsplash.com/photo-1570197781417-0a5237500318?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'); }
-        .img-picole { background-image: url('https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'); }
-
-        .card-content {
-            padding: 30px;
-        }
-
-        .card-title {
-            color: var(--acai-purple);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .card-desc {
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        /* ================= Footer & Contato ================= */
-        footer {
-            background-color: var(--chocolate);
-            color: var(--white);
-            padding: 60px 5% 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-col h3 {
-            color: var(--primary-orange);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .footer-col p, .footer-col li {
-            color: #d1d1d1;
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col i {
-            color: var(--primary-orange);
-            margin-right: 10px;
-        }
-
-        .footer-bottom {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 20px;
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        /* ================= Botão Flutuante WhatsApp ================= */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #1ebe57;
-            color: white;
-        }
-
-        /* ================= Responsividade ================= */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; /* Em um projeto real, adicionar menu hamburguer */ }
-            .ambiente-section { flex-direction: column; text-align: center; }
-            .ambiente-image { width: 100%; height: 300px; }
-        }
-    </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo-nav">
-            <i class="fa-solid fa-ice-cream"></i> Sabor e Verão
-        </div>
-        <div class="nav-links">
-            <a href="#inicio">Início</a>
-            <a href="#ambiente">Ambiente</a>
-            <a href="#cardapio">Cardápio</a>
-            <a href="#contato">Contato</a>
-        </div>
-    </header>
+  <!-- ======================================================
+       A. HEADER / NAVEGAÇÃO FIXA
+  ====================================================== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-container">
+      <!-- Logo em texto estilizado -->
+      <a href="#inicio" class="logo" aria-label="Luigi Sorvetes – Início">
+        <span class="logo-luigi">Luigi</span>
+        <span class="logo-sorvetes">Sorvetes</span>
+      </a>
 
-    <section id="inicio" class="hero">
-        <div class="hero-logo-box">
-            <img src="logo-sabor-verao.png" alt="Sabor e Verão Logo" style="width: 100%; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));">
-        </div>
-        <h1 class="reveal">O sabor do seu verão o ano inteiro!</h1>
-        <p class="reveal">Os melhores açaís, sorvetes e picolés da região esperando por você. Momentos deliciosos e refrescantes a qualquer hora do dia.</p>
-        <a href="#cardapio" class="btn-cta reveal">
-            <i class="fa-solid fa-bag-shopping"></i> Ver Cardápio
+      <!-- Botão hamburguer (mobile) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Links de navegação -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#inicio" class="nav-link">Início</a></li>
+        <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
+        <li><a href="#onde-estamos" class="nav-link">Onde Estamos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ======================================================
+         B. HERO SECTION – INÍCIO
+    ====================================================== -->
+    <section class="hero" id="inicio" aria-label="Início">
+      <!-- Bolinha decorativa flutuante 1 -->
+      <div class="scoop scoop-1" aria-hidden="true">
+        <!--
+          TROQUE: Substitua "src" por uma URL real de bola de sorvete PNG
+          com fundo transparente do Unsplash ou similar.
+          Exemplo: https://images.unsplash.com/photo-XXXXX?w=200&fit=crop
+        -->
+        <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=200&h=200&fit=crop&crop=center"
+             alt="" role="presentation" loading="eager" />
+      </div>
+      <!-- Bolinha decorativa flutuante 2 -->
+      <div class="scoop scoop-2" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1567206563114-c179900d7a50?w=200&h=200&fit=crop&crop=center"
+             alt="" role="presentation" loading="eager" />
+      </div>
+      <!-- Bolinha decorativa flutuante 3 -->
+      <div class="scoop scoop-3" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=180&h=180&fit=crop&crop=center"
+             alt="" role="presentation" loading="eager" />
+      </div>
+
+      <div class="hero-content reveal">
+        <p class="hero-eyebrow">✦ Sorvetes Artesanais em BH ✦</p>
+        <h1 class="hero-title">
+          O sabor que faz<br />
+          <em>você sorrir</em><br />
+          está aqui!
+        </h1>
+        <p class="hero-sub">
+          Potes família, picolés fresquinhos e linha zero — feitos com amor
+          para toda a família.
+        </p>
+        <!-- Botão CTA com animação pulse -->
+        <a href="#cardapio" class="btn btn-cta pulse" aria-label="Ir para o cardápio">
+          <span>🍦</span> Conferir Nossas Delícias
         </a>
+      </div>
+
+      <!-- Ondas decorativas no rodapé do hero -->
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#fff8e1"/>
+        </svg>
+      </div>
     </section>
 
-    <section id="ambiente" class="ambiente-section">
-        <div class="ambiente-text reveal">
-            <h2 class="section-title">Nosso Ambiente</h2>
-            <p>Criamos um espaço pensando no seu conforto e na sua diversão. Nosso ambiente é <strong>amplo, climatizado e super agradável</strong>, perfeito para você escapar da rotina.</p>
-            <p>Contamos com diversas mesas para acomodar confortavelmente toda a sua família e amigos. Venha bater um papo, dar boas risadas e saborear as melhores sobremesas geladas da cidade.</p>
+    <!-- ======================================================
+         C. SEÇÃO DE CARDÁPIO
+    ====================================================== -->
+    <section class="cardapio" id="cardapio" aria-label="Cardápio">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-tag">🍨 O que temos</span>
+          <h2 class="section-title">Nosso Cardápio</h2>
+          <p class="section-sub">Escolha o seu favorito e peça direto pelo WhatsApp!</p>
         </div>
-        <div class="ambiente-image reveal"></div>
-    </section>
 
-    <section id="cardapio" class="cardapio-section">
-        <h2 class="section-title reveal">Destaques do Cardápio</h2>
-        <p class="reveal" style="color: var(--text-light); font-size: 1.1rem;">Escolha a sua forma favorita de se refrescar.</p>
-        
-        <div class="grid-cardapio">
-            <div class="card reveal">
-                <div class="card-img img-acai"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Açaí Premium</h3>
-                    <p class="card-desc">Cremoso, puro e no ponto certo. Monte do seu jeito com nossa imensa variedade de complementos frescos, caldas e cremes especiais.</p>
-                </div>
+        <!-- ── CATEGORIA 1: LINHA FAMÍLIA ── -->
+        <div class="category-block">
+          <h3 class="category-title reveal">
+            <span class="cat-icon">🪣</span> Linha Família
+          </h3>
+          <p class="category-desc reveal">Potes generosos para compartilhar momentos especiais.</p>
+
+          <div class="cards-grid">
+
+            <!-- Card 1 -->
+            <article class="card reveal">
+              <!--
+                TROQUE: Substitua a URL abaixo por uma foto real do produto.
+                Tamanho recomendado: 400×300px.
+              -->
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&h=300&fit=crop"
+                     alt="Pote de sorvete de Morango – 1 litro" loading="lazy" />
+                <span class="card-badge">Mais Vendido</span>
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Morango Intenso</h4>
+                <p class="card-desc">Cremoso, com pedaços de morango fresco. Pote de 1 litro.</p>
+                <!--
+                  TROQUE: Substitua o número do WhatsApp abaixo (5531999999999)
+                  pelo número real da sorveteria, com DDI + DDD, sem espaços ou traços.
+                  O texto após "text=" é a mensagem pré-preenchida.
+                -->
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Morango%20Intenso%20(Linha%20Família)%20🍓"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Morango Intenso pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card reveal">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop"
+                     alt="Pote de sorvete de Chocolate – 1 litro" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Chocolate Belga</h4>
+                <p class="card-desc">Cacau selecionado com toque aveludado. Pote de 1 litro.</p>
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Chocolate%20Belga%20(Linha%20Família)%20🍫"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Chocolate Belga pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card reveal">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"
+                     alt="Pote de sorvete de Creme – 1 litro" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Creme da Casa</h4>
+                <p class="card-desc">A clássica receita da casa, com vanilla e baunilha fresca.</p>
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Creme%20da%20Casa%20(Linha%20Família)%20🍦"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Creme da Casa pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+          </div><!-- /.cards-grid -->
+        </div><!-- /.category-block -->
+
+        <!-- ── CATEGORIA 2: PICOLÉS DE FRUTA ── -->
+        <div class="category-block">
+          <h3 class="category-title reveal">
+            <span class="cat-icon">🍋</span> Picolés de Fruta
+          </h3>
+          <p class="category-desc reveal">Refrescantes, feitos com polpa de fruta de verdade.</p>
+
+          <div class="cards-grid">
+
+            <!-- Card 4 -->
+            <article class="card reveal">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=400&h=300&fit=crop"
+                     alt="Picolé de Maracujá" loading="lazy" />
+                <span class="card-badge badge-fruit">Natural</span>
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Maracujá Tropical</h4>
+                <p class="card-desc">Azedinho e refrescante, feito com polpa fresca de maracujá.</p>
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Picolé%20de%20Maracujá%20🍹"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Picolé de Maracujá pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card reveal">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?w=400&h=300&fit=crop"
+                     alt="Picolé de Limão" loading="lazy" />
+                <span class="card-badge badge-fruit">Natural</span>
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Limão Siciliano</h4>
+                <p class="card-desc">Gelado, cítrico e delicioso. Perfeito para o verão mineiro.</p>
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Picolé%20de%20Limão%20🍋"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Picolé de Limão pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card reveal">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=400&h=300&fit=crop"
+                     alt="Picolé de Manga" loading="lazy" />
+                <span class="card-badge badge-fruit">Natural</span>
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Manga Palmeirinha</h4>
+                <p class="card-desc">Doce e suculento, com polpa de manga de verdade. Irresistível!</p>
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Picolé%20de%20Manga%20🥭"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Picolé de Manga pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+          </div><!-- /.cards-grid -->
+        </div><!-- /.category-block -->
+
+        <!-- ── CATEGORIA 3: LINHA ZERO ── -->
+        <div class="category-block">
+          <h3 class="category-title reveal">
+            <span class="cat-icon">🌿</span> Linha Zero
+          </h3>
+          <p class="category-desc reveal">Sem adição de açúcar — sabor incrível para todos!</p>
+
+          <div class="cards-grid">
+
+            <!-- Card 7 -->
+            <article class="card card-zero reveal">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=300&fit=crop"
+                     alt="Sorvete Zero Açúcar de Morango" loading="lazy" />
+                <span class="card-badge badge-zero">Zero Açúcar</span>
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Morango Zero</h4>
+                <p class="card-desc">Cremoso e saboroso. Sem adição de açúcar, com adoçante natural.</p>
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Morango%20Zero%20(Linha%20Zero)%20🌿🍓"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Morango Zero pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="card card-zero reveal">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop"
+                     alt="Sorvete Zero Açúcar de Chocolate" loading="lazy" />
+                <span class="card-badge badge-zero">Zero Açúcar</span>
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Chocolate Zero</h4>
+                <p class="card-desc">Para os amantes de chocolate sem culpa. Rico e indulgente.</p>
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Chocolate%20Zero%20(Linha%20Zero)%20🌿🍫"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Chocolate Zero pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 9 -->
+            <article class="card card-zero reveal">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&h=300&fit=crop"
+                     alt="Sorvete Zero Açúcar de Coco" loading="lazy" />
+                <span class="card-badge badge-zero">Zero Açúcar</span>
+              </div>
+              <div class="card-body">
+                <h4 class="card-name">Coco Zero</h4>
+                <p class="card-desc">Suave, cremoso e tropical. Com pedaços de coco ralado na massa.</p>
+                <a href="https://wa.me/5531999999999?text=Olá!%20Quero%20pedir%20o%20Coco%20Zero%20(Linha%20Zero)%20🌿🥥"
+                   class="btn btn-pedir" target="_blank" rel="noopener noreferrer"
+                   aria-label="Pedir Coco Zero pelo WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  Pedir agora
+                </a>
+              </div>
+            </article>
+
+          </div><!-- /.cards-grid -->
+        </div><!-- /.category-block -->
+
+      </div><!-- /.section-inner -->
+    </section><!-- /.cardapio -->
+
+    <!-- ======================================================
+         D. ONDE ESTAMOS – LOCALIZAÇÃO
+    ====================================================== -->
+    <section class="localizacao" id="onde-estamos" aria-label="Onde Estamos">
+      <div class="section-inner localizacao-inner">
+
+        <!-- Coluna esquerda: pin + mapa ilustrativo -->
+        <div class="loc-visual reveal">
+          <div class="map-pin" aria-hidden="true">
+            <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="40" cy="97" rx="18" ry="5" fill="rgba(0,0,0,0.15)"/>
+              <path d="M40 0 C18 0 0 18 0 40 C0 62 40 100 40 100 C40 100 80 62 80 40 C80 18 62 0 40 0Z" fill="#1F2282"/>
+              <circle cx="40" cy="38" r="16" fill="#FFD633"/>
+              <text x="40" y="44" text-anchor="middle" fill="#1F2282" font-size="18" font-family="Quicksand, sans-serif" font-weight="700">🍦</text>
+            </svg>
+          </div>
+          <p class="pin-label reveal">Estamos aqui!</p>
+        </div>
+
+        <!-- Coluna direita: card de endereço -->
+        <div class="loc-info reveal">
+          <div class="address-card">
+            <h2 class="loc-title">Onde Estamos</h2>
+
+            <div class="address-block">
+              <span class="address-icon" aria-hidden="true">📍</span>
+              <div>
+                <strong>Endereço</strong>
+                <p>Av. Abílio Machado, 1545<br />Glória, Belo Horizonte – MG</p>
+              </div>
             </div>
 
-            <div class="card reveal">
-                <div class="card-img img-sorvete"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Sorvetes Artesanais</h3>
-                    <p class="card-desc">Sabores inesquecíveis que derretem na boca. Desde os clássicos até as combinações mais gourmet, feitos com ingredientes selecionados.</p>
-                </div>
+            <div class="address-block">
+              <span class="address-icon" aria-hidden="true">⏰</span>
+              <div>
+                <strong>Horário de Funcionamento</strong>
+                <p>Aberto todos os dias<br />das 09:00 às 21:00</p>
+              </div>
             </div>
 
-            <div class="card reveal">
-                <div class="card-img img-picole"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Picolés Refrescantes</h3>
-                    <p class="card-desc">A pedida rápida perfeita para os dias quentes. Picolés à base de água com frutas reais e opções cremosas à base de leite.</p>
-                </div>
+            <div class="address-block">
+              <span class="address-icon" aria-hidden="true">📸</span>
+              <div>
+                <strong>Instagram</strong>
+                <!--
+                  TROQUE: Substitua o link do Instagram abaixo pelo perfil real.
+                -->
+                <p>
+                  <a href="https://instagram.com/luigi_sorvetes_abilio"
+                     target="_blank" rel="noopener noreferrer"
+                     class="insta-link">@luigi_sorvetes_abilio</a>
+                </p>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <footer id="contato">
-        <div class="footer-col reveal">
-            <h3>Sabor e Verão</h3>
-            <p>Levando alegria e refrescância para o seu dia a dia com produtos de altíssima qualidade.</p>
-        </div>
-        
-        <div class="footer-col reveal">
-            <h3>Onde Estamos</h3>
-            <ul>
-                <li><i class="fa-solid fa-location-dot"></i> Av. Fictícia Comercial, 123</li>
-                <li>Bairro Urca, Belo Horizonte - MG</li>
-                <li>CEP: 31000-000</li>
-            </ul>
+            <!--
+              TROQUE: Substitua o número do WhatsApp abaixo pelo número real.
+            -->
+            <a href="https://wa.me/5531999999999?text=Olá!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido%20🍦"
+               class="btn btn-whatsapp-loc" target="_blank" rel="noopener noreferrer"
+               aria-label="Chamar no WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Chamar no WhatsApp
+            </a>
+          </div>
         </div>
 
-        <div class="footer-col reveal">
-            <h3>Horário de Funcionamento</h3>
-            <ul>
-                <li><i class="fa-solid fa-clock"></i> Terça a Sexta: 14h às 22h</li>
-                <li><i class="fa-solid fa-clock"></i> Sáb, Dom e Feriados: 13h às 23h</li>
-            </ul>
-        </div>
+      </div>
+    </section><!-- /.localizacao -->
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Sabor e Verão - Sorvete, Picolé e Açaí. Desenvolvido por seu estúdio/agência.</p>
-        </div>
-    </footer>
+  </main>
 
-    <a href="https://wa.me/5531900000000" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+  <!-- ======================================================
+       E. FOOTER
+  ====================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-luigi">Luigi</span>
+        <span class="logo-sorvetes footer-sorvetes">Sorvetes</span>
+      </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Efeito de Revelar (Fade-in / Slide-up) ao rolar a página
-            const reveals = document.querySelectorAll(".reveal");
+      <div class="footer-links">
+        <!--
+          TROQUE: Substitua o link do Instagram abaixo pelo perfil real.
+        -->
+        <a href="https://instagram.com/luigi_sorvetes_abilio"
+           target="_blank" rel="noopener noreferrer"
+           class="footer-insta"
+           aria-label="Instagram da Luigi Sorvetes">
+          <!-- Ícone SVG do Instagram -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          @luigi_sorvetes_abilio
+        </a>
+      </div>
 
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                const elementVisible = 100;
+      <p class="footer-copy">
+        &copy; <span id="year"></span> Luigi Sorvetes. Todos os direitos reservados.<br />
+        <small>Feito com 🍦 em Belo Horizonte – MG</small>
+      </p>
+    </div>
+  </footer>
 
-                reveals.forEach((reveal) => {
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add("active");
-                    }
-                });
-            };
+  <!-- ======================================================
+       BOTÃO FLUTUANTE DO WHATSAPP (fixo, canto inferior direito)
+  ====================================================== -->
+  <!--
+    TROQUE: Substitua o número do WhatsApp abaixo pelo número real da sorveteria.
+  -->
+  <a href="https://wa.me/5531999999999?text=Olá!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido%20🍦"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Falar com Luigi Sorvetes pelo WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="float-tooltip">Fazer pedido!</span>
+  </a>
 
-            window.addEventListener("scroll", revealOnScroll);
-            revealOnScroll(); // Aciona no carregamento inicial
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
